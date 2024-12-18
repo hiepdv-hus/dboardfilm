@@ -1,63 +1,79 @@
 import React from "react";
-import headerImage from "../images/undraw_rocket.svg"; // Cập nhật đúng đường dẫn hình ảnh
-
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 const Sidebar = () => {
   return (
-    <div>
+    <div className="sidebar">
       <ul
         className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
         {/* Sidebar Brand */}
-        <a
+        <Link
           className="sidebar-brand d-flex align-items-center justify-content-center"
-          href="index.html"
+          to="/"
         >
           <div className="sidebar-brand-text mx-3">ADMIN FILM</div>
-        </a>
+        </Link>
 
         <hr className="sidebar-divider my-0" />
 
         {/* Dashboard */}
         <li className="nav-item active">
-          <a className="nav-link" href="index.html">
+          <Link className="nav-link" to="/">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
-          </a>
+          </Link>
         </li>
 
         <hr className="sidebar-divider" />
 
         {/* Interface Section */}
-        {/* <div className="sidebar-heading">Interface</div> */}
-
         <SidebarItem
-          title="Components"
-          icon="fas fa-fw fa-cog"
+          title="Quản lý phim"
+          icon="fas fa-film"
           targetId="collapseTwo"
           items={[
-            { text: "Buttons", link: "buttons.html" },
-            { text: "Cards", link: "cards.html" },
+            { text: "Danh sách phim", link: "/film-list" },
+            { text: "Tạo mới phim", link: "/film-add" },
           ]}
         />
 
         <SidebarItem
-          title="Utilities"
-          icon="fas fa-fw fa-wrench"
-          targetId="collapseUtilities"
+          title="Quản lý rạp chiếu phim"
+          icon="fas fa-building"
+          targetId="collapseUtilities1"
           items={[
-            { text: "Colors", link: "utilities-color.html" },
-            { text: "Borders", link: "utilities-border.html" },
-            { text: "Animations", link: "utilities-animation.html" },
-            { text: "Other", link: "utilities-other.html" },
+            { text: "Danh sách rạp phim", link: "/cinema-list" },
+            { text: "Tạo mới rạp", link: "/cinema-add" },
           ]}
         />
 
-        <hr className="sidebar-divider" />
+        <SidebarItem
+          title="Quản lý phòng chiếu"
+          icon="fas fa-person-booth"
+          targetId="collapseUtilities2"
+          items={[
+            { text: "Danh sách phòng chiếu", link: "/zoom-list" },
+            { text: "Tạo mới", link: "/zoom-add" },
+          ]}
+        />
+
+        <SidebarItem
+          title="Quản lý lịch chiếu"
+          icon="fas fa-fw fa-wrench"
+          targetId="collapseUtilities3"
+          items={[{ text: "Colors", link: "/utilities-color" }]}
+        />
+
+        <SidebarItem
+          title="Quản lý suất chiếu"
+          icon="fas fa-fw fa-wrench"
+          targetId="collapseUtilities4"
+          items={[{ text: "Colors", link: "/utilities-color" }]}
+        />
 
         {/* Addons Section */}
-        {/* <div className="sidebar-heading">Addons</div> */}
-
         <SidebarItem
           title="Pages"
           icon="fas fa-fw fa-folder"
@@ -66,34 +82,34 @@ const Sidebar = () => {
             {
               header: "Login Screens:",
               items: [
-                { text: "Login", link: "login.html" },
-                { text: "Register", link: "register.html" },
-                { text: "Forgot Password", link: "forgot-password.html" },
+                { text: "Login", link: "/login" },
+                { text: "Register", link: "/register" },
+                { text: "Forgot Password", link: "/forgot-password" },
               ],
             },
             { divider: true },
             {
               header: "Other Pages:",
               items: [
-                { text: "404 Page", link: "404.html" },
-                { text: "Blank Page", link: "blank.html" },
+                { text: "404 Page", link: "/404" },
+                { text: "Blank Page", link: "/blank" },
               ],
             },
           ]}
         />
 
         <li className="nav-item">
-          <a className="nav-link" href="charts.html">
+          <Link className="nav-link" to="/charts">
             <i className="fas fa-fw fa-chart-area"></i>
             <span>Charts</span>
-          </a>
+          </Link>
         </li>
 
         <li className="nav-item">
-          <a className="nav-link" href="tables.html">
+          <Link className="nav-link" to="/tables">
             <i className="fas fa-fw fa-table"></i>
             <span>Tables</span>
-          </a>
+          </Link>
         </li>
 
         <hr className="sidebar-divider d-none d-md-block" />
@@ -106,17 +122,20 @@ const Sidebar = () => {
 const SidebarItem = ({ title, icon, targetId, items }) => {
   return (
     <li className="nav-item">
-      <div
+      {/* Nút điều hướng */}
+      <button
         className="nav-link collapsed"
-        href="#"
-        data-toggle="collapse"
-        data-target={`#${targetId}`}
-        aria-expanded="true"
+        type="button"
+        data-bs-toggle="collapse" // Bootstrap 5
+        data-bs-target={`#${targetId}`}
+        aria-expanded="false"
         aria-controls={targetId}
       >
         <i className={icon}></i>
         <span>{title}</span>
-      </div>
+      </button>
+
+      {/* Nội dung collapsible */}
       <div id={targetId} className="collapse" data-parent="#accordionSidebar">
         <div className="bg-white py-2 collapse-inner rounded">
           {items.map((item, index) =>
@@ -124,20 +143,20 @@ const SidebarItem = ({ title, icon, targetId, items }) => {
               <React.Fragment key={index}>
                 <h6 className="collapse-header">{item.header}</h6>
                 {item.items.map((subItem, subIndex) => (
-                  <a
+                  <Link
                     className="collapse-item"
-                    href={subItem.link}
+                    to={subItem.link}
                     key={subIndex}
                   >
                     {subItem.text}
-                  </a>
+                  </Link>
                 ))}
                 {item.divider && <div className="collapse-divider"></div>}
               </React.Fragment>
             ) : (
-              <a className="collapse-item" href={item.link} key={index}>
+              <Link className="collapse-item" to={item.link} key={index}>
                 {item.text}
-              </a>
+              </Link>
             )
           )}
         </div>
