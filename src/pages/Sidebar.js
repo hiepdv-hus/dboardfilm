@@ -61,54 +61,27 @@ const Sidebar = () => {
 
         <SidebarItem
           title="Quản lý lịch chiếu"
-          icon="fas fa-fw fa-wrench"
+          icon="fas fa-fw fa-table"
           targetId="collapseUtilities3"
-          items={[{ text: "Colors", link: "/utilities-color" }]}
+          items={[
+            { text: "Danh sách lịch chiếu", link: "/show-time" },
+          ]}
         />
 
         <SidebarItem
           title="Quản lý suất chiếu"
-          icon="fas fa-fw fa-wrench"
+          icon="fas fa-fw fa-table"
           targetId="collapseUtilities4"
-          items={[{ text: "Colors", link: "/utilities-color" }]}
-        />
-
-        {/* Addons Section */}
-        <SidebarItem
-          title="Pages"
-          icon="fas fa-fw fa-folder"
-          targetId="collapsePages"
           items={[
-            {
-              header: "Login Screens:",
-              items: [
-                { text: "Login", link: "/login" },
-                { text: "Register", link: "/register" },
-                { text: "Forgot Password", link: "/forgot-password" },
-              ],
-            },
-            { divider: true },
-            {
-              header: "Other Pages:",
-              items: [
-                { text: "404 Page", link: "/404" },
-                { text: "Blank Page", link: "/blank" },
-              ],
-            },
+            { text: "Danh sách suất chiếu", link: "/suat-chieu" },
           ]}
         />
 
-        <li className="nav-item">
-          <Link className="nav-link" to="/charts">
-            <i className="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-          </Link>
-        </li>
 
         <li className="nav-item">
-          <Link className="nav-link" to="/tables">
-            <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
+          <Link className="nav-link" to="/order">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Đơn hàng</span>
           </Link>
         </li>
 

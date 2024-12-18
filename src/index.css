@@ -3,3 +3,43 @@
   background-image: linear-gradient(180deg, #0f162b88 10%, #0f162b 100%);
   background-size: cover;
 }
+
+.ghe {
+  display: grid;
+    grid-template-columns: repeat(4, 150px);
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ghe-item .box1 {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background: gray;
+  border-radius: 4px;
+}
+
+.ghe-item .box2 {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background: #6611D4;
+  border-radius: 4px;
+}
+
+.ghe-item .box3 {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background: #D41111;
+  border-radius: 4px;
+}
+
+.ghe-item .box4 {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background: #E915BF;
+  border-radius: 4px;
+}

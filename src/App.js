@@ -13,6 +13,9 @@ import CinemaLst from "./pages/CinemaLst";
 import CinemaAdd from "./pages/CinemaAdd";
 import ZoomLst from "./pages/ZoomLst";
 import ZoomAdd from "./pages/ZoomAdd";
+import ShowTime from "./pages/ShowTime";
+import SuatChieu from "./pages/SuatChieu";
+import Order from "./pages/Order";
 
 function App() {
   const Layout = () => {
@@ -42,6 +45,9 @@ function App() {
           <Route path="/cinema-add" element={<CinemaAdd />} />
           <Route path="/zoom-list" element={<ZoomLst />} />
           <Route path="/zoom-add" element={<ZoomAdd />} />
+          <Route path="/show-time" element={<ShowTime />} />
+          <Route path="/suat-chieu" element={<SuatChieu />} />
+          <Route path="/order" element={<Order />} />
         </Route>
       </Routes>
     </Router>

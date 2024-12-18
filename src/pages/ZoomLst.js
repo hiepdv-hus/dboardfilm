@@ -1,4 +1,5 @@
 import React from "react";
+import PhongChieu from "../images/phongchieu.png"
 
 const data = [
   {
@@ -39,10 +40,6 @@ const ZoomLst = () => {
   return (
     <div>
       <div className="container-fluid">
-        <div className="d-flex align-items-center justify-content-between">
-          <h1 className="h3 mb-2 text-gray-800">Danh sách phòng chiếu</h1>
-          <button className="btn btn-primary">+ Tạo phòng chiếu</button>
-        </div>
 
         <div className="row mt-4">
           <div className="col-md-6">
@@ -91,6 +88,92 @@ const ZoomLst = () => {
           </div>
         </div>
 
+        <div className="d-flex align-items-center justify-content-between mt-4">
+          <h1 className="h3 mb-2 text-gray-800">Danh sách phòng chiếu</h1>
+          <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal123">+ Tạo phòng chiếu</button>
+        </div>
+
+        <div className="modal fade" id="exampleModal123" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">Tạo phòng chiếu</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                <div className="mb-3">
+                  <label className="form-label">Tên phòng chiếu</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Tên phòng chiếu"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Loại phòng chiếu</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Loại phòng chiếu"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Số hàng</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Số hàng"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Số cột</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Số cột"
+                  />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Thoát</button>
+                <button type="button" className="btn btn-primary">Tạo mới</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="modal fade" id="exampleModal789" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModal789">Tạo phòng chiếu</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                <img width={'100%'} src={PhongChieu}/>
+
+                <div className="ghe">
+                  <div className="ghe-item d-flex align-items-center">
+                      <div className="box1"></div> Đã đặt
+                  </div>
+                  <div className="ghe-item d-flex align-items-center">
+                      <div className="box2"></div> Ghế thường
+                  </div>
+                  <div className="ghe-item d-flex align-items-center">
+                      <div className="box3"></div> Ghế Vip
+                  </div>
+                  <div className="ghe-item d-flex align-items-center">
+                      <div className="box4"></div> Ghế bạn đặt
+                  </div>
+              </div>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="card shadow mb-4 mt-4">
           <div className="card-body">
             <div className="table-responsive">
@@ -119,7 +202,7 @@ const ZoomLst = () => {
                       <td>
                         <button
                           type="button"
-                          class="btn btn-outline-primary py-0"
+                          className="btn btn-outline-primary py-0"
                         >
                           {item.office}
                         </button>
@@ -127,7 +210,7 @@ const ZoomLst = () => {
                       <td>
                         <button
                           type="button"
-                          class="btn btn-outline-danger py-0"
+                          className="btn btn-outline-danger py-0"
                         >
                           {item.age}
                         </button>
@@ -135,21 +218,21 @@ const ZoomLst = () => {
                       <td>
                         <button
                           type="button"
-                          class="btn btn-outline-success py-0"
+                          className="btn btn-outline-success py-0"
                         >
                           {item.startDate}
                         </button>
                       </td>
                       <td>{item.salary}</td>
                       <td>
-                        <button className="btn btn-warning">
-                          <i class="fas fa-film"></i>
+                        <button className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal789">
+                          <i className="fas fa-film"></i>
                         </button>
                         <button className="ms-2 btn btn-primary">
-                          <i class="fas fa-pen"></i>
+                          <i className="fas fa-pen"></i>
                         </button>
                         <button className="ms-2 btn btn-outline-danger">
-                          <i class="fas fa-trash-alt"></i>
+                          <i className="fas fa-trash-alt"></i>
                         </button>
                       </td>
                     </tr>
@@ -160,29 +243,29 @@ const ZoomLst = () => {
 
             <div className="d-flex justify-content-end">
               <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#">
+                <ul className="pagination">
+                  <li className="page-item">
+                    <a className="page-link" href="#">
                       Previous
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a class="page-link active" href="#">
+                  <li className="page-item">
+                    <a className="page-link active" href="#">
                       1
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
+                  <li className="page-item">
+                    <a className="page-link" href="#">
                       2
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
+                  <li className="page-item">
+                    <a className="page-link" href="#">
                       3
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
+                  <li className="page-item">
+                    <a className="page-link" href="#">
                       Next
                     </a>
                   </li>
