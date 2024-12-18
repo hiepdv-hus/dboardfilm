@@ -52,14 +52,14 @@ const FilmForm = () => {
 
           {/* Cột bên phải */}
           <div className="col-md-6">
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label className="form-label">Hình thức chiếu</label>
               <select className="form-select">
                 <option>Select method</option>
                 <option>Online</option>
                 <option>Theater</option>
               </select>
-            </div>
+            </div> */}
             <div className="mb-3">
               <label className="form-label">Hình thức dịch</label>
               <select className="form-select">

@@ -13,7 +13,7 @@ const Dashboard = () => {
               {
                 name: "Expected",
                 value: 1400,
-                strokeHeight: 5,
+                strokeHeight: 0,
                 strokeColor: "#775DD0",
               },
             ],

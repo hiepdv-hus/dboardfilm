@@ -19,7 +19,7 @@ const Sidebar = () => {
         <hr className="sidebar-divider my-0" />
 
         {/* Dashboard */}
-        <li className="nav-item active">
+        <li className="nav-item">
           <Link className="nav-link" to="/">
             <i className="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
