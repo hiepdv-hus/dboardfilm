@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const data = [
     {
@@ -136,7 +137,7 @@ const Order = () => {
                 <tbody>
                   {data.map((item, index) => (
                     <tr key={index}>
-                        <td>{item.code}</td>
+                        <td><Link to="/order-detail">{item.code}</Link></td>
                         <td>{item.name}</td>
                         <td><button
                             type="button"

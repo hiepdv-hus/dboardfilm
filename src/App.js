@@ -16,6 +16,7 @@ import ZoomAdd from "./pages/ZoomAdd";
 import ShowTime from "./pages/ShowTime";
 import SuatChieu from "./pages/SuatChieu";
 import Order from "./pages/Order";
+import OrderDetail from "./pages/OrderDetail";
 
 function App() {
   const Layout = () => {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/show-time" element={<ShowTime />} />
           <Route path="/suat-chieu" element={<SuatChieu />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/order-detail" element={<OrderDetail />} />
         </Route>
       </Routes>
     </Router>
